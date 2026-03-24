@@ -1,0 +1,12 @@
+{
+  "name": "buddyshare",
+  "version": "1.0.0",
+  "description": "A blazing-fast, command-line peer-to-peer file sharing utility. Built as a 6-hour MVP sprint to explore WebRTC Data Channels and Go concurrency.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

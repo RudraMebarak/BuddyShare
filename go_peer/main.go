@@ -34,12 +34,12 @@ func main() {
 		log.Fatal("Dial error: ", err)
 	}
 	defer wsConn.Close()
-	log.Println("✅ Connected to Matchmaker")
+	log.Println("Connected to Matchmaker!!!!!!")
 
 	// Join the room
 	joinMsg := SignalMessage{Type: "join-room", RoomID: *roomID}
 	wsConn.WriteJSON(joinMsg)
-	log.Printf("🏠 Joined room: %s\n", *roomID)
+	log.Printf(" Joined room: %s\n", *roomID)
 
 	// 2. Setup WebRTC PeerConnection
 	config := webrtc.Configuration{
@@ -97,7 +97,7 @@ func main() {
 					if err.Error() == "EOF" {
 						// End of file reached! Tell the receiver we are done.
 						dataChannel.SendText("EOF")
-						fmt.Println("✅ File sent completely!")
+						fmt.Println("File sent completely!")
 						break
 					}
 					log.Fatal("Error reading file:", err)
@@ -129,7 +129,7 @@ func main() {
 			RoomID: *roomID,
 			Data:   string(offerJSON),
 		})
-		log.Println("📤 Sent WebRTC Offer")
+		log.Println(" Sent WebRTC Offer")
 
 	} else {
 		// Receiver LISTENS for the data channel
@@ -188,7 +188,7 @@ func main() {
 							RoomID: *roomID,
 							Data:   string(answerJSON),
 						})
-						log.Println("📤 Sent WebRTC Answer")
+						log.Println(" Sent WebRTC Answer")
 					}
 				} else {
 					// It's an ICE Candidate
